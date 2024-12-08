@@ -1,26 +1,60 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+
+
+
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { FaRegUser } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const HeroSection = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
-      {/* Navbar Section */}
-      <div className='flex flex-col md:flex-row justify-between items-center bg-[#FBEBB5] w-full h-auto md:h-[40px] pt-4 md:pt-[60px] px-4'>
-        {/* Center section with links */}
-        <ul className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-center md:ml-[35%]'>
-          <Link href="/"><li className='text-[14px] md:text-[16px] font-semibold'>Home</li></Link>
-          <Link href="/shop"><li className='text-[14px] md:text-[16px] font-semibold'>Shop</li></Link>
-          <Link href="#"><li className='text-[14px] md:text-[16px] font-semibold'>About</li></Link>
-          <Link href="#"><li className='text-[14px] md:text-[16px] font-semibold'>Contact</li></Link>
+      <div className="flex flex-col md:flex-row justify-between items-center bg-[#FBEBB5] w-full h-auto md:h-[40px] pt-4 md:pt-[60px] px-4">
+        {/* Hamburger Menu */}
+        <div className="md:hidden flex justify-between items-center w-full">
+          <button onClick={toggleMenu} className="text-2xl">
+            {menuOpen ? <HiX /> : <HiMenu />}
+          </button>
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <ul className="hidden md:flex md:flex-row md:space-x-10 md:ml-[35%] text-center">
+          <Link href="/" passHref>
+            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+              Home
+            </li>
+          </Link>
+          <Link href="/shop" passHref>
+            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+              Shop
+            </li>
+          </Link>
+          <Link href="/about" passHref>
+            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+              About
+            </li>
+          </Link>
+          <Link href="/contact" passHref>
+            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+              Contact
+            </li>
+          </Link>
         </ul>
 
-        {/* Right section with icons */}
-        <div className='flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[14px] md:text-[16px] font-bold'>
+        {/* Right Section Icons */}
+        <div className="hidden md:flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[14px] md:text-[16px] font-bold">
           <FaRegUser className="text-base md:text-lg" />
           <CiSearch className="text-base md:text-lg" />
           <CiHeart className="text-base md:text-lg" />
@@ -28,15 +62,54 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Mobile Navigation Overlay */}
+      {menuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 z-20 flex flex-col justify-center items-center space-y-6">
+          <Link href="/" passHref>
+            <div
+              className="text-white text-[18px] font-semibold cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </div>
+          </Link>
+          <Link href="/shop" passHref>
+            <div
+              className="text-white text-[18px] font-semibold cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Shop
+            </div>
+          </Link>
+          <Link href="/about" passHref>
+            <div
+              className="text-white text-[18px] font-semibold cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              About
+            </div>
+          </Link>
+          <Link href="/contact" passHref>
+            <div
+              className="text-white text-[18px] font-semibold cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </div>
+          </Link>
+        </div>
+      )}
+
       {/* Hero Section */}
-      <div className='flex flex-col lg:flex-row bg-[#FBEBB5] h-auto lg:h-[100vh] justify-center items-center px-4'>
-        {/* Text Section */}
-        <div className='text-center lg:text-left mt-8 lg:mt-0'>
-          <h1 className='text-[24px] md:text-[36px] lg:text-[64px] font-semibold text-[#000000]'>
-            Rocket single<br /> seater
+      <div className="flex flex-col lg:flex-row bg-[#FBEBB5] h-auto lg:h-[100vh] justify-center items-center px-4">
+        {/* Text Content */}
+        <div className="text-center lg:text-left mt-8 lg:mt-0">
+          <h1 className="text-[24px] md:text-[36px] lg:text-[64px] font-semibold text-[#000000]">
+            Rocket single
+            <br /> seater
           </h1>
-          <Link href="#">
-            <p className='text-[14px] md:text-[16px] font-semibold text-[#000000] inline-block relative mt-2'>
+          <Link href="/shop" passHref>
+            <p className="text-[14px] md:text-[16px] font-semibold text-[#000000] inline-block relative mt-2">
               Shop Now
               <span className="block w-full h-[2px] bg-black mt-1"></span>
             </p>
@@ -44,7 +117,7 @@ const HeroSection = () => {
         </div>
 
         {/* Image Section */}
-        <div className='mt-6 lg:mt-0'>
+        <div className="mt-6 lg:mt-0">
           <Image
             src="/images/seater1.png"
             alt="Rocket Seater"
@@ -62,85 +135,5 @@ export default HeroSection;
 
 
 
-// import React from 'react';
-// import Link from 'next/link';
-// import Image from 'next/image';
-// import { FaRegUser } from "react-icons/fa6";
-// import { CiSearch } from "react-icons/ci";
-// import { CiHeart } from "react-icons/ci";
-// import { IoCartOutline } from "react-icons/io5";
-
-// const HeroSection = () => {
-//   return (
-
-//     <>
-//       <div className='flex flex-col md:flex-row justify-between items-center bg-[#FBEBB5] w-full h-auto md:h-[40px] pt-[20px] md:pt-[60px] px-4'>
-//         {/* Center section with links */}
-//         <ul className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10 text-center md:ml-[35%]'>
-//           <Link href="#"><li className='text-[16px] font-semibold'>Home</li></Link>
-//           <Link href="#"><li className='text-[16px] font-semibold'>Shop</li></Link>
-//           <Link href="#"><li className='text-[16px] font-semibold'>About</li></Link>
-//           <Link href="#"><li className='text-[16px] font-semibold'>Contact</li></Link>
-//         </ul>
-
-//         {/* Right section with icons */}
-//         <div className='flex justify-center space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[16px] font-bold'>
-//           <FaRegUser className="text-lg" />
-//           <CiSearch className="text-lg" />
-//           <CiHeart className="text-lg" />
-//           <IoCartOutline className="text-lg" />
-//         </div>
-//       </div>
-   
-    
-//       <div className='flex flex-col lg:flex-row bg-[#FBEBB5] h-[100vh] justify-center items-center'>
-//         {/* Text Section */}
-//         <div className='text-center lg:text-left md:pt-[60%] lg:pt-0'>
-//           <h1 className='text-[32px] md:text-[48px] lg:text-[64px] font-semibold text-[#000000]'>
-//             Rocket single<br /> seater
-//           </h1>
-//           <Link href="#">
-//             <p className='text-[16px] font-semibold text-[#000000] inline-block relative'>
-//               Shop Now
-//               <span className="block w-full h-[2px] bg-black mt-1"></span>
-//             </p>
-//           </Link>
-//         </div>
-
-//         {/* Image Section */}
-//         <div className='pt-6 lg:pt-0'>
-//           <Image src="/images/seater1.png" alt="Rocket Seater" width={600} height={400} />
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default HeroSection;
 
 
-
-// import React from 'react';
-// import Link from 'next/link';
-// import Image from 'next/image';
-
-// const HeroSection = () => {
-//   return (
-//     <>
- 
-//     <div className=' flex  bg-[#FBEBB5] h-[100vh] justify-center  '>
-//     <div className=' ' >
-//         <h1 className='md:text-[64px] md:pt-[60%] font-semibold text-[#000000]'>Rocket single<br></br> seater</h1>
-//       <Link href="#"><p className='text-[16px] font-semibold text-[#000000] '>Shop Now</p></Link>
-//     </div>
-//     <div className='pt-0'>
-//         <Image src="/images/seater1.png" alt="" width={600} height={400} />
-//     </div>
-//     </div>
-
-
-//     </>
-//   )
-// }
-
-// export default HeroSection

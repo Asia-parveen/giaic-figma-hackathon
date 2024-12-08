@@ -1,3 +1,7 @@
+
+
+
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,9 +20,9 @@ const ShopPage = () => {
         {/* Center section with links */}
         <ul className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-center md:ml-[35%]'>
           <Link href="/"><li className='text-[14px] md:text-[16px] font-semibold'>Home</li></Link>
-          <Link href="/shop"><li className='text-[14px] md:text-[16px] font-semibold'>Shop</li></Link>
+          <Link href="/"><li className='text-[14px] md:text-[16px] font-semibold'>Shop</li></Link>
           <Link href="#"><li className='text-[14px] md:text-[16px] font-semibold'>About</li></Link>
-          <Link href="#"><li className='text-[14px] md:text-[16px] font-semibold'>Contact</li></Link>
+          <Link href="/contact"><li className='text-[14px] md:text-[16px] font-semibold'>Contact</li></Link>
         </ul>
 
         {/* Right section with icons */}
