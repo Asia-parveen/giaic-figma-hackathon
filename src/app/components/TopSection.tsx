@@ -7,7 +7,7 @@ const TopSection = () => {
   const products = [
     {
       id: 1,
-      image: '/images/bigsofs.png',
+      image: '/images/murha.png',
       name: 'Trenton modular sofa_1',
       price: 'Rs. 25,000.00',
     },
