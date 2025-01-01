@@ -129,5 +129,3 @@ const ShopTop = () => {
 
 export default ShopTop;
 
-
-
