@@ -21,6 +21,9 @@ const ContactPage = () => {
           <Link href="#">
             <li className="text-[14px] md:text-[16px] font-semibold">About</li>
           </Link>
+          <Link href="/product">
+            <li className="text-[14px] md:text-[16px] font-semibold">Products</li>
+          </Link>
           <Link href="/">
             <li className="text-[14px] md:text-[16px] font-semibold">
               Contact

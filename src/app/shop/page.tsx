@@ -1,36 +1,41 @@
 
-
+"use client";
 
 
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaRegUser } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
-import { CiHeart } from "react-icons/ci";
-import { IoCartOutline } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa6";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import Slider from '../components/Slider';
 import ShopTop from '../components/ShopTop';
 import ShopSlider from '../components/ShopSlider';
 
+
 const ShopPage = () => {
+  
+
+
   return (
     <div>
-          <div className='flex flex-col md:flex-row justify-between items-center  w-full h-auto md:h-[40px] pt-4 md:pt-[60px] px-4'>
+          <div className='flex flex-col md:flex-row  items-center  w-full h-auto md:h-[40px] pt-4 md:pt-[60px] px-4 md:gap-[10rem]'>
         {/* Center section with links */}
-        <ul className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-center md:ml-[35%]'>
-          <Link href="/"><li className='text-[14px] md:text-[16px] font-semibold'>Home</li></Link>
-          <Link href="/"><li className='text-[14px] md:text-[16px] font-semibold'>Shop</li></Link>
-          <Link href="#"><li className='text-[14px] md:text-[16px] font-semibold'>About</li></Link>
-          <Link href="/contact"><li className='text-[14px] md:text-[16px] font-semibold'>Contact</li></Link>
+        <ul className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-center md:ml-[20%] '>
+          <Link href="/"><li className='text-[14px] md:text-[18px] font-semibold hover:text-gray-400'>Home</li></Link>
+          <Link href="/shop"><li className='text-[14px] md:text-[18px] font-semibold hover:text-gray-400'>Shop</li></Link>
+          <Link href="/blog"><li className='text-[14px] md:text-[18px] font-semibold hover:text-gray-400'>Blog</li></Link>
+          <Link href="/product"><li className='text-[14px] md:text-[18px] font-semibold hover:text-gray-400'>Products</li></Link>
+          <Link href="/contact"><li className='text-[14px] md:text-[18px] font-semibold hover:text-gray-400'>Contact</li></Link>
         </ul>
 
         {/* Right section with icons */}
-        <div className='flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[14px] md:text-[16px] font-bold'>
-          <FaRegUser className="text-base md:text-lg" />
-          <CiSearch className="text-base md:text-lg" />
-          <CiHeart className="text-base md:text-lg" />
-          <IoCartOutline className="text-base md:text-lg" />
+        <div className='flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 text-[14px] md:text-[16px] font-bold'>
+        <Link href="account"><FaRegUser className="text-base md:text-lg hover:text-gray-400" /></Link>
+         <Link href="/product"><IoSearch className="text-base md:text-lg hover:text-gray-400" /></Link>
+          <FaRegHeart className="text-base md:text-lg hover:text-gray-400" />
+         <Link href="/cart"><MdOutlineShoppingCart className="text-base md:text-lg hover:text-gray-400" /></Link>
         </div>
       </div>
       <div className="relative w-full h-[350px] mt-[30px]">
@@ -50,10 +55,13 @@ const ShopPage = () => {
           </p>
          
         </div>
+        
       </div>
+      
       <Slider/>
       <ShopTop/>
       <ShopSlider/>
+
     </div>
   )
 }

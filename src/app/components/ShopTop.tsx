@@ -1,5 +1,7 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ShopTop = () => {
   const products = [
@@ -101,38 +103,31 @@ const ShopTop = () => {
     },
   ];
 
-  return (
-    <>
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:my-[40px] lg:grid-cols-4 gap-6 px-4 pb-[80px]">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="flex flex-col items-center p-4 "
-          >
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={300}
-              height={300}
-              className="object-cover rounded-lg"
-            />
-            <p className="mt-4 text-sm text-gray-600 font-semibold">{product.name}</p>
-            <h2 className="text-lg font-bold text-gray-800">{product.price}</h2>
-          </div>
-        ))}
-      </div>
 
-      {/* Pagination Section */}
-      <div className="flex justify-center items-center gap-8 mt-6">
-        <div className="w-[40px] h-[40px] bg-[#FBEBB5] text-center pt-[10px] rounded-md">1</div>
-        <div className="w-[40px] h-[40px] bg-[#FFF9E5] text-center pt-[10px] rounded-md">2</div>
-        <div className="w-[40px] h-[40px] bg-[#FFF9E5] text-center pt-[10px] rounded-md">3</div>
-        <div className="w-[60px] h-[40px] bg-[#FFF9E5] text-center pt-[10px] rounded-md">Next</div>
-      </div>
-    </>
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:my-[40px] lg:grid-cols-4 gap-6 px-4 pb-[80px]">
+      {products.map((product) => (
+        <Link
+          key={product.id}
+          href={`/shop/${product.id}`}
+          className="flex flex-col items-center p-4 cursor-pointer"
+        >
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+          />
+          <p className="mt-4 text-sm text-gray-600 font-semibold">{product.name}</p>
+          <h2 className="text-lg font-bold text-gray-800">{product.price}</h2>
+        </Link>
+      ))}
+    </div>
   );
 };
 
 export default ShopTop;
+
+
 

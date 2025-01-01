@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Insta = () => {
   return (
@@ -19,8 +20,8 @@ const Insta = () => {
           <p className="opacity-[0.8] max-w-[600px] text-[16px] md:text-[18px] mt-2">
             Follow our store on Instagram
           </p>
-          <button className="mt-7 px-[50px] py-[20px] rounded-full shadow-2xl bg-[#FAFAFA]  text-black font-semibold">
-            Follow Us
+          <button className="mt-7 px-[50px] py-[16px] rounded-full shadow-2xl bg-[#FAFAFA]  text-black font-semibold hover:bg-[#000000] hover:text-white">
+          <Link href= "https://www.linkedin.com/in/asia-parveen-258a952a7/">Follow Us</Link>
           </button>
         </div>
       </div>
@@ -31,30 +32,3 @@ const Insta = () => {
 export default Insta;
 
 
-// import React from 'react'
-// import Image from 'next/image'
-
-// const Insta = () => {
-//   return (
-//    <>
-//     <div className='w-full '>
-//     <Image
-//               src="/images/Group 43.png"
-//               alt="insta"
-//               width={1440}
-//               height={450}
-//               className="object-cover"
-//             />
-//              <div className="text-center pt-[20px]">
-//         <h1 className="text-center text-[24px] md:text-[36px] font-bold">Our Instagram</h1>
-//         <p className="opacity-[0.5] max-w-[600px] mx-auto text-[16px]">
-//         Follow our store on Instagram
-//         </p>
-//         <button className='px-[30px] py-[15px] rounded-md shadow-md bg-white'>Follow Us</button>
-//       </div>
-//     </div>
-//    </>
-//   )
-// }
-
-// export default Insta

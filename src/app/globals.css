@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    overflow-x: hidden; /* Disable horizontal scrollbar */
+    width: 100%; /* Ensure no horizontal overflow */
+  }

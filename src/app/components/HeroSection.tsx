@@ -7,9 +7,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaRegUser } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
-import { CiHeart } from "react-icons/ci";
-import { IoCartOutline } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa6";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const HeroSection = () => {
@@ -30,35 +30,46 @@ const HeroSection = () => {
         </div>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex md:flex-row md:space-x-10 md:ml-[35%] text-center">
-          <Link href="/" passHref>
-            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+        <ul className="hidden md:flex md:flex-row md:space-x-10 md:ml-[8%] text-center">
+          <Link href="/" >
+            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer hover:text-gray-400">
               Home
             </li>
           </Link>
-          <Link href="/shop" passHref>
-            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+          <Link href="/shop" >
+            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer hover:text-gray-400">
               Shop
             </li>
           </Link>
-          <Link href="/about" passHref>
-            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
-              About
+          <Link href="/product">
+            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer hover:text-gray-400">
+              Products
+            </li>
+            </Link>
+            <Link href="/account">
+            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer hover:text-gray-400">
+              Account
             </li>
           </Link>
-          <Link href="/contact" passHref>
-            <li className="text-[14px] md:text-[16px] font-semibold cursor-pointer">
+          {/* <Link href="/product">
+            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer">
+              Products
+            </li> */}
+          {/* </Link> */}
+          <Link href="/contact">
+            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer hover:text-gray-400">
               Contact
             </li>
           </Link>
+
         </ul>
 
         {/* Right Section Icons */}
-        <div className="hidden md:flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[14px] md:text-[16px] font-bold">
-          <FaRegUser className="text-base md:text-lg" />
-          <CiSearch className="text-base md:text-lg" />
-          <CiHeart className="text-base md:text-lg" />
-          <IoCartOutline className="text-base md:text-lg" />
+        <div className="hidden md:flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[250px] text-[14px] md:text-[16px] font-bold">
+        <FaRegUser className="text-base md:text-lg hover:opacity-[0.5] cursor-pointer" />
+        <IoSearch className="text-base md:text-lg " />
+          <FaRegHeart className="text-base md:text-lg" />
+          <MdOutlineShoppingCart className="text-base md:text-lg" />
         </div>
       </div>
 
@@ -73,7 +84,7 @@ const HeroSection = () => {
               Home
             </div>
           </Link>
-          <Link href="/shop" passHref>
+          <Link href="/shop">
             <div
               className="text-white text-[18px] font-semibold cursor-pointer"
               onClick={() => setMenuOpen(false)}
@@ -81,15 +92,32 @@ const HeroSection = () => {
               Shop
             </div>
           </Link>
-          <Link href="/about" passHref>
+
+          <Link href="/product">
             <div
               className="text-white text-[18px] font-semibold cursor-pointer"
               onClick={() => setMenuOpen(false)}
             >
-              About
+              Product
             </div>
           </Link>
-          <Link href="/contact" passHref>
+          <Link href="/account">
+            <div
+              className="text-white text-[18px] font-semibold cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Account
+            </div>
+          </Link>
+          {/* <Link href="/product">
+            <div
+              className="text-white text-[18px] font-semibold cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Product
+            </div>
+          </Link> */}
+          <Link href="/contact" >
             <div
               className="text-white text-[18px] font-semibold cursor-pointer"
               onClick={() => setMenuOpen(false)}
@@ -101,10 +129,10 @@ const HeroSection = () => {
       )}
 
       {/* Hero Section */}
-      <div className="flex flex-col lg:flex-row bg-[#FBEBB5] h-auto lg:h-[100vh] justify-center items-center px-4">
+      <div className="flex flex-col lg:flex-row bg-[#FBEBB5] h-auto lg:h-[100vh] justify-center items-center px-4 lg:pt-[70px]">
         {/* Text Content */}
         <div className="text-center lg:text-left mt-8 lg:mt-0">
-          <h1 className="text-[24px] md:text-[36px] lg:text-[64px] font-semibold text-[#000000]">
+          <h1 className="text-[30px] md:text-[36px] lg:text-[64px] font-semibold text-[#000000]">
             Rocket single
             <br /> seater
           </h1>

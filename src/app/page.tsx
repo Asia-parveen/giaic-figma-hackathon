@@ -6,6 +6,7 @@ import TopSection from './components/TopSection';
 import NewArrivl from './components/NewArrivl';
 import Blog from './components/Blog';
 import Insta from './components/Insta';
+
 // import Footer from './components/Footer';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     <div>
       {/* <Navbar/> */}
       <HeroSection/>
+     
       <SecondSection/>
       <TopSection/>
       <NewArrivl/>

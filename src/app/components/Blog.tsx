@@ -59,7 +59,7 @@ const Blog = () => {
               {/* Read More Link */}
               <Link href={blog.link}>
                 <p className="text-[14px] md:text-[18px] font-semibold text-[#000000] inline-block pt-4  lg:pl-[30%] pl-[31%]">
-                  Read More
+                 <Link href="/blog">Read More</Link>
                   <span className="block w-full h-[2px] bg-black mt-1 opacity-[0.7]"></span>
                 </p>
               </Link>
@@ -86,46 +86,3 @@ export default Blog;
 
 
 
-// import React from 'react'
-// import Image from 'next/image';
-// import Link from 'next/link';
-
-// const Blog = () => {
-//   return (
-//     <>
-//     <div>
-//          <div className="text-center pt-[20px]">
-//         <h1 className="text-center text-[24px] md:text-[36px] font-semibold">Our Blogs</h1>
-//         <p className="opacity-[0.5] max-w-[600px] mx-auto text-[14px]">
-//         Find a bright ideal to suit your taste with our great selection
-//         </p>
-//       </div>
-//       <div>
-//       <Image
-//               src="/images/tea.png"
-//               alt=""
-//               width={350}
-//               height={350}
-//               className="object-cover"
-//             />
-//             <p>Going all-in with millennial design</p>
-//             <Link href="#">
-//           <p className="text-[14px] md:text-[18px] font-semibold text-[#000000] inline-block lg:pt-8 text-center">
-//            Read More
-//             <span className="block w-full h-[2px] bg-black mt-1 opacity-[0.7]"></span>
-//           </p>
-//         </Link>
-//         <Image
-//               src="/images/date.png"
-//               alt="date"
-//               width={120}
-//               height={30}
-//               className="object-cover"
-//             />
-//       </div>
-//     </div>
-//     </>
-//   )
-// }
-
-// export default Blog
