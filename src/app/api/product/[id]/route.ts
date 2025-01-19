@@ -1,4 +1,19 @@
-// app/api/product/[id]/route.ts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// This is my final code
+// // app/api/product/[id]/route.ts
 import { NextResponse } from 'next/server';
 import { client } from '../../../../sanity/lib/client';
 
@@ -6,7 +21,7 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   const { id } = params;
 
   try {
-    const productQuery = `*[_id == "${id}"]{...}[0]`; // Get the first product with the matching id
+    const productQuery = `*[_id == "${id}"]{...}[0]`; 
     const product = await client.fetch(productQuery);
 
     if (!product) {

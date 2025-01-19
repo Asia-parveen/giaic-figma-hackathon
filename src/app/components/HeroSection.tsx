@@ -12,6 +12,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 
+
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -51,16 +52,13 @@ const HeroSection = () => {
               Account
             </li>
           </Link>
-          {/* <Link href="/product">
-            <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer">
-              Products
-            </li> */}
-          {/* </Link> */}
+        
           <Link href="/contact">
             <li className="text-[14px] md:text-[18px] font-semibold cursor-pointer hover:text-gray-400">
               Contact
             </li>
           </Link>
+         
 
         </ul>
 

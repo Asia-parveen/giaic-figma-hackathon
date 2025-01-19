@@ -1,8 +1,6 @@
 
-
+// This is my final code
 // ProductPage.tsx
-
-
 import { createClient } from "@sanity/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,13 +9,14 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 
 import CartIcon from "../components/CartIcon";
-import ProductCard from "../components/ProductList"; // Importing client component
+import ProductCard from "../components/ProductList";
 
-// Sanity client setup
+
+
 const client = createClient({
-  projectId: "qdtn2ujs", // Replace with your project ID
-  dataset: "production", // Replace with your dataset name
-  useCdn: true,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: false,
 });
 
 export type Product = {
@@ -30,13 +29,25 @@ export type Product = {
       url: string;
     };
   };
+  inventory: number;
+  colors: string[];
 };
+
 
 const ProductPage = async () => {
   // Fetch products directly inside the component during server-side rendering
   const products = await client.fetch(
-    `*[_type == "product"]{ _id, title, description, price, image{asset->{url}} }`
+    `*[_type == "product"]{ 
+      _id, 
+      title, 
+      description, 
+      price, 
+      inventory, 
+      colors, 
+      image{asset->{url}} 
+    }`
   );
+
 
   if (products.length === 0) {
     return <p>No products available.</p>;
@@ -44,7 +55,8 @@ const ProductPage = async () => {
 
   return (
     <div className="px-4  py-8 lg:my-[50px] lg:mt-0 mx-auto md:mx-0  md:w-full ">
-      <div className="flex flex-col md:flex-row justify-between items-center w-full h-auto md:h-[40px] pt-4 px-4 sticky ">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full h-auto md:h-[40px] pt-4 px-4 fixed top-0 z-30">
+
         {/* Center section with links */}
         <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-center md:ml-[35%]">
           <Link href="/">
@@ -62,7 +74,7 @@ const ProductPage = async () => {
               Account
             </li>
           </Link>
-        
+
           <Link href="/contact">
             <li className="text-[14px] md:text-[18px] font-semibold hover:text-gray-400">
               Contact
@@ -71,11 +83,11 @@ const ProductPage = async () => {
           <CartIcon />
         </ul>
 
-        {/* Right section with icons */}
+
         <div className="flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[14px] md:text-[16px] font-bold">
           <FaRegUser className="text-base md:text-lg hover:text-gray-400" />
           <IoSearch className="text-base md:text-lg hover:text-gray-400" />
-        <Link href="/blog"><FaRegHeart className="text-base md:text-lg hover:text-gray-400" /></Link>
+          <Link href="/blog"><FaRegHeart className="text-base md:text-lg hover:text-gray-400" /></Link>
         </div>
       </div>
 
@@ -97,7 +109,7 @@ const ProductPage = async () => {
         </div>
       </div>
 
-      <div className="grid gap-y-8 gap-x-6 lg:gap-x-8 lg:gap-y-12 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:my-[30px]">
+      <div className="grid gap-y-8 gap-x-6 lg:gap-x-8 lg:gap-y-12 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:my-[30px] ">
         {products.map((product: Product) => (
           <ProductCard key={product._id} product={product} />
         ))}
