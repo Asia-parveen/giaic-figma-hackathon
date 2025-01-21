@@ -1,12 +1,11 @@
-
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { Address, Rate, trackingObjType } from "../../type";
-import { cartProductsWhichCanBeShipped } from "../../data";
+import { Address, Rate, trackingObjType } from "@/type";
+import { cartProductsWhichCanBeShipped } from "@/data";
 import Link from "next/link";
 
-
+// don't judge frontend code i have build it to uderstand shipengine api 😁
 
 const ShippingRatesPage = () => {
   // to ship address
@@ -276,7 +275,7 @@ const ShippingRatesPage = () => {
           </div>
         )}
         {labelPdf && (
-         <Link target="_blank" href={labelPdf}> <button className=" w-full px-4 py-2 mt-[10px] bg-[#B88E2F] text-white rounded-md hover:bg-green-600">Download Label</button></Link>
+         <Link target="_blank" href={labelPdf}> <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Download Label</button></Link>
         )}
         {trackingObj && (
           <div className="mt-8">

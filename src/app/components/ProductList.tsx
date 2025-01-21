@@ -65,7 +65,7 @@ const ProductList = ({ product }: { product: Product }) => {
 
         {/* Display Inventory */}
         <div className="mt-2">
-          <span className="text-md font-medium text-green-700">Inventory: </span>
+          <span className="text-md font-medium text-gray-800">Stock Available: </span>
           <span className="text-green-700">{currentInventory}</span>
         </div>
 

@@ -64,10 +64,10 @@ const HeroSection = () => {
 
         {/* Right Section Icons */}
         <div className="hidden md:flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[250px] text-[14px] md:text-[16px] font-bold">
-        <FaRegUser className="text-base md:text-lg hover:opacity-[0.5] cursor-pointer" />
-        <IoSearch className="text-base md:text-lg " />
-          <FaRegHeart className="text-base md:text-lg" />
-          <MdOutlineShoppingCart className="text-base md:text-lg" />
+        <FaRegUser className="text-base md:text-xl hover:opacity-[0.5] cursor-pointer" />
+        <IoSearch className="text-base md:text-xl" />
+          <FaRegHeart className="text-base md:text-xl" />
+          <MdOutlineShoppingCart className="text-base md:text-xl hover:opacity-5" />
         </div>
       </div>
 

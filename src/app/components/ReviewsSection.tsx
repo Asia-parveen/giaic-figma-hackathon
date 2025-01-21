@@ -22,7 +22,7 @@ const ReviewsSection = () => {
       id: 2,
       name: "Ahmed khan",
       rating: 4,
-      comment: "Good quality, but the size runs a bit small.",
+      comment: "Good quality, and satisfied service.",
       date: "2025-01-18",
     },
   ]);
@@ -54,7 +54,7 @@ const ReviewsSection = () => {
   return (
     <div className="max-w-4xl mx-auto my-8 p-4 bg-[#FFF9E5] rounded-lg shadow-md md:mt-[40px]">
       {/* Review Form */}
-      <h2 className="text-2xl font-semibold text-gray-700 mb-4">Write a Review</h2>
+      <h2 className="text-2xl font-semibold text-[#000000] mb-4">Write a Review</h2>
       <form onSubmit={handleSubmitReview} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-600" htmlFor="name">
@@ -119,7 +119,7 @@ const ReviewsSection = () => {
             <div key={review.id} className="p-4 border-b border-gray-200">
               <div className="flex items-center justify-between">
                 <h4 className="text-lg font-semibold">{review.name}</h4>
-                <div className="text-yellow-500">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</div>
+                <div className="text-yellow-500 text-xl">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</div>
               </div>
               <p className="mt-2 text-gray-600">{review.comment}</p>
               <span className="text-sm text-gray-500">Posted on {review.date}</span>
