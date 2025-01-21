@@ -10,6 +10,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import TopSection from "../../components/TopSection";
 import Link from "next/link";
+import ShopSlider from "@/app/components/ShopSlider";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -278,7 +279,9 @@ const ProductDetailPage = () => {
       <span className="w-4 h-4 bg-[#000000] rounded-full cursor-pointer"></span>
       <span className="w-4 h-4 bg-[#CDBA7B] rounded-full cursor-pointer"></span>
     </div>
+    <Link href="/product" className="underline">For shop Go to product page</Link>
   </div>
+  
 </div>
 
       <hr className="mt-[50px] text-gray-500"></hr>
@@ -290,7 +293,7 @@ const ProductDetailPage = () => {
 
 <div className="w-[90%] lg:w-[67%] mx-auto lg:ml-[20%] my-[20px] lg:my-[30px] opacity-[0.6] text-justify">
   <p>
-    Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
+    Embodying the raw, wayward spirit of rock and roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
   </p>
   <br />
   <p>
@@ -320,6 +323,7 @@ const ProductDetailPage = () => {
         <h1 className="text-[30px] text-[#000000] font-bold">Realted Products</h1>
       </div> */}
       <TopSection/>
+      <ShopSlider/>
     </div>
 
   );

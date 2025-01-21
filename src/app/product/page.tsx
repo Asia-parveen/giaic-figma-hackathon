@@ -10,6 +10,7 @@ import { FaRegHeart } from "react-icons/fa6";
 
 import CartIcon from "../components/CartIcon";
 import ProductCard from "../components/ProductList";
+import ShopSlider from "../components/ShopSlider";
 
 
 
@@ -115,6 +116,7 @@ const ProductPage = async () => {
           <ProductCard key={product._id} product={product} />
         ))}
       </div>
+      <ShopSlider/>
     </div>
   );
 };

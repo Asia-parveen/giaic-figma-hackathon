@@ -8,13 +8,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import CartIcon from "../../components/CartIcon";
 import ReviewsSection from "@/app/components/ReviewsSection";
+import ShopSlider from "@/app/components/ShopSlider";
 
 // Sanity client setup
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Replace with your project ID
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET, // Replace with your dataset name
   token: process.env.SANITY_API_TOKEN,
-  useCdn: true, // Enable CDN for faster responses
+  useCdn: false, // Enable CDN for faster responses
 });
 
 // Image URL builder
@@ -210,6 +211,7 @@ const ProductDetailPage = ({ params }: { params: { id: string } }) => {
         </div>
       </div>
       <ReviewsSection/>
+      <ShopSlider/>
     </div>
   );
 };
