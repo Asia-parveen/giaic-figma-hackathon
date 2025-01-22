@@ -1,0 +1,16 @@
+"Hackathon2025 Day 5: Testing Error Handling, and Backend IntegrationRefinementDocument",,,,,,,,
+441760,,,,,,,,
+Asia Parveen.,,,,,,,,
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC001,Validate Product Dynamic Page,Integrate the product page and verify all related items,display product correctly,Displayed correctly,Passed,Low,/,NoError/completed
+TC002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Medium,/,Handled gracefull
+TC003,Check Product Not Found Error,Missmathch product name,Correct Product Query,Displayed,None,N/A,.,Imcomplete working
+TC004,Navigation,move towards next page,redirect to next page,Redirect,None,N/A,/,Imcomplete working
+TC005,Test cart,Add or remove products,products cart updates by add or removed,Updated by add or remove,Passed,Low,/,working smoothly
+TC006,manage stok quantity,by adding productinto cart decreasing the sanity stock quantit,decrementin sanity stock,managing correctly,Passed,Medium,/,managed correctly
+TC007,integrate Shipment,"by generating rates, labels and tracking number","generate rates, label andtrackingID",Managed greatfully,None,N/A,.,error indynamicdata
+TC008,Manage Reviews Section,ManageReviews in real time,Save Reviews in sanity,Managed greatfully,Passed,Medium,/,Correctly managed
+TC009,Ensure responsivenesson mobi,lResize browser window > Check layout,Layout adjusts properly to screen size,Responsive layout working,Passed,Low,/,Test successful
+,,,,,,,,
+"Note: Need more improvment and do more implementations in future and have to add more functionalities such as Pagination,",,,,,,,,
+"search bar,Authentiation,Shipping and payment g:\market-place-bulider\Documentation\Day5_task\images\404error.png",,,,,,,,

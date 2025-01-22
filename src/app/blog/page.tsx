@@ -53,10 +53,10 @@ export default async function BlogPage() {
         {/* Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-center w-full pt-4 md:pt-[60px] px-4">
           <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-center md:ml-[35%]">
-            <Link href="/"><li className="text-[14px] md:text-[16px] font-semibold">Home</li></Link>
-            <Link href="/shop"><li className="text-[14px] md:text-[16px] font-semibold">Shop</li></Link>
-            <Link href="/product"><li className="text-[14px] md:text-[16px] font-semibold">Product</li></Link>
-            <Link href="/contact"><li className="text-[14px] md:text-[16px] font-semibold">Contact</li></Link>
+            <Link href="/"><li className="text-[14px] md:text-[18px] font-semibold">Home</li></Link>
+            <Link href="/shop"><li className="text-[14px] md:text-[18px] font-semibold">Shop</li></Link>
+            <Link href="/product"><li className="text-[14px] md:text-[18px] font-semibold">Product</li></Link>
+            <Link href="/contact"><li className="text-[14px] md:text-[18px] font-semibold">Contact</li></Link>
           </ul>
           <div className="flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-0 md:mr-[200px] text-[14px] md:text-[16px] font-bold">
             <Link href="/account"><FaRegUser className="text-base md:text-lg hover:text-gray-400" /></Link>
