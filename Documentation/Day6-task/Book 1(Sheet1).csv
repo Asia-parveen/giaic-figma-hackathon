@@ -1,9 +1,0 @@
-MarketPlace Bulider Hackathon ,,,,,,,,,,,
-Day-1,MARKETPLACE JOURNEY For MARKETPLACE JOURNEY ,Day-2,DAY 2 PLANNING THE TECHNICAL FOUNDATION,Day-3,API INTEGRATION AND DATA MIGRATION,Day-4,BUILDING DYNAMIC FRONTEND COMPONENTS FOR YOUR MARKETPLACE,Day-5,"TESTING, ERROR HANDLING, AND BACKEND INTEGRATION REFINEMENT",Day-6,DEPLOYMENT PREPARATION AND STAGING ENVIRONMENT SETUP
-,,,,,,,,,,,
-,": Introduction to E-Commerce, Q-Commerce, and Rental E-Commerce",,Activities: Transitioning to Technical Planning,,API Integration and Data Migration,,Make all Component,, Functional Testing,,Deployment Strategy Planning
-,: Choose  Marketplace Type,,Define Technical Requirements,,Validate and Adjust  Schema:,, Reusable Components:,,Error Handling .,,Environment Variable Configuratio
-,"Define Business Goals ",,Design System Architecture ,,Data Migration,,State Management:,,Performance Testing,,Configure Environment Variables
-,: Create a Data Schema,,Plan API Requirements .,,API Integration in Next.js:,,Styling:,,Cross-Browser and Device Testing,,Deploy Application:
-,,,Write Technical Documentation ,,,,Performance Optimization:,,Security Testing,,Performance Testing:
-,,,,,,,,,,,Create README.md:
